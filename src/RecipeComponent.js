@@ -11,6 +11,7 @@ class RecipeComponet extends Component {
           id: 0,
           elementName: "",
           elementAmount: "",
+          elementPrice: "",
           elementUnit: "",
         },
       ],
@@ -25,7 +26,7 @@ class RecipeComponet extends Component {
       id: inputItems.length,
       elementName: items.name,
       elementAmount: "",
-      elementUnit: items.unit,
+      elementUnit: items.volume === 0 ? "개" : items.unit,
     };
     this.setState({
       inputItems: [...inputItems, newItem],
