@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import InputComponent from "./InputComponent";
+import FindMaterial from "./components/FindMaterial";
 
 class RecipeComponet extends Component {
   constructor(props) {
@@ -17,6 +18,20 @@ class RecipeComponet extends Component {
     };
   }
 
+  addFunction = (items) => {
+    console.log(items);
+    const { inputItems, inputAddId } = this.state;
+    const newItem = {
+      id: inputItems.length,
+      elementName: items.name,
+      elementAmount: "",
+      elementUnit: items.unit,
+    };
+    this.setState({
+      inputItems: [...inputItems, newItem],
+      inputAddId: inputAddId + 1,
+    });
+  };
   // input 추가하기
   AddInput = () => {
     const { inputItems, inputAddId } = this.state;
@@ -116,6 +131,7 @@ class RecipeComponet extends Component {
             onChange={this.onChange}
             confirm={this.confirm}
           />
+          <FindMaterial addFunction={this.addFunction} />
         </div>
       </div>
     );
