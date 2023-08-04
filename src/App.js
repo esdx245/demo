@@ -1,4 +1,5 @@
 import "./App.css";
+import FindMaterial from "./components/FindMaterial";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
         <h3>
           <label for="yy">레시피 재료</label>
         </h3>
-
+        <FindMaterial />
         <div id="bir_wrap">
           <div id="bir_yy">
             <span class="box">
